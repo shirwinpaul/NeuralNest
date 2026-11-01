@@ -1,0 +1,78 @@
+{
+ "setting-a": {
+  "circle": [
+   "/samples/setting-a/circle-01.png",
+   "/samples/setting-a/circle-02.png",
+   "/samples/setting-a/circle-03.png",
+   "/samples/setting-a/circle-04.png",
+   "/samples/setting-a/circle-05.png",
+   "/samples/setting-a/circle-06.png",
+   "/samples/setting-a/circle-07.png",
+   "/samples/setting-a/circle-08.png",
+   "/samples/setting-a/circle-09.png",
+   "/samples/setting-a/circle-10.png",
+   "/samples/setting-a/circle-11.png",
+   "/samples/setting-a/circle-12.png",
+   "/samples/setting-a/circle-13.png",
+   "/samples/setting-a/circle-14.png",
+   "/samples/setting-a/circle-15.png",
+   "/samples/setting-a/circle-16.png"
+  ],
+  "square": [
+   "/samples/setting-a/square-01.png",
+   "/samples/setting-a/square-02.png",
+   "/samples/setting-a/square-03.png",
+   "/samples/setting-a/square-04.png",
+   "/samples/setting-a/square-05.png",
+   "/samples/setting-a/square-06.png",
+   "/samples/setting-a/square-07.png",
+   "/samples/setting-a/square-08.png",
+   "/samples/setting-a/square-09.png",
+   "/samples/setting-a/square-10.png",
+   "/samples/setting-a/square-11.png",
+   "/samples/setting-a/square-12.png",
+   "/samples/setting-a/square-13.png",
+   "/samples/setting-a/square-14.png",
+   "/samples/setting-a/square-15.png",
+   "/samples/setting-a/square-16.png"
+  ]
+ },
+ "setting-b": {
+  "circle": [
+   "/samples/setting-b/circle-01.png",
+   "/samples/setting-b/circle-02.png",
+   "/samples/setting-b/circle-03.png",
+   "/samples/setting-b/circle-04.png",
+   "/samples/setting-b/circle-05.png",
+   "/samples/setting-b/circle-06.png",
+   "/samples/setting-b/circle-07.png",
+   "/samples/setting-b/circle-08.png",
+   "/samples/setting-b/circle-09.png",
+   "/samples/setting-b/circle-10.png",
+   "/samples/setting-b/circle-11.png",
+   "/samples/setting-b/circle-12.png",
+   "/samples/setting-b/circle-13.png",
+   "/samples/setting-b/circle-14.png",
+   "/samples/setting-b/circle-15.png",
+   "/samples/setting-b/circle-16.png"
+  ],
+  "square": [
+   "/samples/setting-b/square-01.png",
+   "/samples/setting-b/square-02.png",
+   "/samples/setting-b/square-03.png",
+   "/samples/setting-b/square-04.png",
+   "/samples/setting-b/square-05.png",
+   "/samples/setting-b/square-06.png",
+   "/samples/setting-b/square-07.png",
+   "/samples/setting-b/square-08.png",
+   "/samples/setting-b/square-09.png",
+   "/samples/setting-b/square-10.png",
+   "/samples/setting-b/square-11.png",
+   "/samples/setting-b/square-12.png",
+   "/samples/setting-b/square-13.png",
+   "/samples/setting-b/square-14.png",
+   "/samples/setting-b/square-15.png",
+   "/samples/setting-b/square-16.png"
+  ]
+ }
+}

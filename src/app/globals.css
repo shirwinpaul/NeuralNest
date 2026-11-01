@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* Colour tokens: "lab at night" is the default; light mode via data-theme="light". */
+:root {
+  --bg: #070b1a;
+  --bg-2: #0c1330;
+  --panel: #111a3d;
+  --panel-2: #17224d;
+  --border: #26346b;
+  --text: #e8ecff;
+  --muted: #a3aed6;
+  --cyan: #22d3ee;
+  --violet: #a78bfa;
+  --amber: #fbbf24;
+  --good: #34d399;
+  --bad: #f87171;
+  --glow: rgba(34, 211, 238, 0.35);
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f5f7ff;
+  --bg-2: #e9eefc;
+  --panel: #ffffff;
+  --panel-2: #f0f3ff;
+  --border: #c9d2f0;
+  --text: #0d1433;
+  --muted: #47527a;
+  --cyan: #0e7490;
+  --violet: #6d28d9;
+  --amber: #b45309;
+  --good: #047857;
+  --bad: #b91c1c;
+  --glow: rgba(14, 116, 144, 0.2);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-cyan: var(--cyan);
+  --color-violet: var(--violet);
+  --color-amber: var(--amber);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+body {
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% -10%, color-mix(in srgb, var(--violet) 14%, transparent), transparent 55%),
+    radial-gradient(ellipse at 90% 0%, color-mix(in srgb, var(--cyan) 12%, transparent), transparent 50%);
+  background-attachment: fixed;
+}
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+a { color: inherit; }
+
+.panel {
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+.glow { box-shadow: 0 0 24px var(--glow); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border-radius: .75rem; padding: .5rem 1rem; font-weight: 600; font-size: .9rem;
+  border: 1px solid var(--border); background: var(--panel-2); color: var(--text);
+  transition: transform .15s, box-shadow .15s, background .15s;
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) { box-shadow: 0 0 16px var(--glow); }
+.btn:active:not(:disabled) { transform: scale(.97); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  color: #061022; border-color: transparent;
+}
+.btn-sm { padding: .3rem .65rem; font-size: .8rem; border-radius: .6rem; }
+.input, .select {
+  background: var(--bg-2); border: 1px solid var(--border); color: var(--text);
+  border-radius: .6rem; padding: .4rem .6rem; font-size: .9rem; width: 100%;
+}
+.label { font-size: .78rem; color: var(--muted); font-weight: 600; display: block; margin-bottom: .25rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: .35rem; font-size: .75rem;
+  padding: .15rem .55rem; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--bg-2); color: var(--muted);
+}
+.mono { font-family: var(--font-mono); }
+input[type="range"] { accent-color: var(--cyan); width: 100%; }
+input[type="checkbox"] { accent-color: var(--cyan); }
+
+@keyframes pulse-neuron { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+.pulse { animation: pulse-neuron 1.4s ease-in-out infinite; }
+
+/* Respect reduced motion: OS setting or the in-app toggle. */
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion="on"]) *, :root:not([data-motion="on"]) *::before, :root:not([data-motion="on"]) *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important;
+  }
+}
+:root[data-motion="off"] *, :root[data-motion="off"] *::before, :root[data-motion="off"] *::after {
+  animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important;
+}
+
+/* Model card printing */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  .panel { border-color: #999; background: #fff; }
+}
+.print-only { display: none; }
+
+/* Print only the Model Card when requested */
+@media print {
+  .print-card body * { visibility: hidden !important; }
+  .print-card #model-card, .print-card #model-card * { visibility: visible !important; }
+  .print-card #model-card { position: absolute; left: 0; top: 0; width: 100%; color: #000; }
+  .print-card #model-card .print-only { display: block !important; }
+  .print-card body > header, .print-card body > footer { display: none !important; }
+}
